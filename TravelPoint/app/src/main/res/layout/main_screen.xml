@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#FE8300"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- HERO -->
+    <ImageView
+        android:id="@+id/login_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.35"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_hero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.375"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1" />
+    <!-- SEARCH_BAR -->
+    <EditText
+        android:id="@+id/main_input_search"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints="FFF"
+        android:background="@drawable/rounded_component"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor" />
+    <!-- MENU_BUTTON -->
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#00FFFFFF"
+        android:importantForAccessibility="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hamburger_menu_icon" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="Escolha o lugar e deixe que a Travel Point faça tudo por você!"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/login_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_input_search" />
+    <FrameLayout
+        android:id="@+id/login_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_component_frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="1"
+        tools:ignore="ExtraText">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+                <!-- TITLE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Lista de viagens"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+                <!-- SUB-TITLE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lugares populares perto de você"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+                <!-- CAROUSEL -->
+                <android.widget.HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- IMAGE -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image1"
+                                android:alpha="0.75" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Thermas dos Laranjais"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Olimpia - SP"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                        </RelativeLayout>
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- IMAGE -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image2"
+                                android:alpha="0.75" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Aparecida do Norte"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Aparecida do Norte - SP"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                        </RelativeLayout>
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- IMAGE -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image3"
+                                android:alpha="0.75" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Torre de Miroku"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Ribeirão Pires - SP"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                        </RelativeLayout>
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- IMAGE -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image1"
+                                android:alpha="0.75" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Thermas dos Laranjais"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Olimpia - SP"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                        </RelativeLayout>
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- IMAGE -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image1"
+                                android:alpha="0.75" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Thermas dos Laranjais"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Olimpia - SP"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </android.widget.HorizontalScrollView>
+                <!-- SUB-TITLE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotéis perto de você"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+                <!-- CAROUSEL -->
+                <android.widget.HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="200dp"
+                            android:layout_height="140dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- HERO -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image1"
+                                android:alpha="0.75" />
+                            <!-- FRAME -->
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:background="#FFFFFF" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="55dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Hotel Vitória"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="40dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Campinas - SP"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                            <!-- STAR -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="110dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:paddingStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:alpha="0.75"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/star_rating" />
+                            <!-- VALUE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_toEndOf="@+id/imageView"
+                                android:gravity="start|bottom"
+                                android:text="R$750"
+                                android:textColor="#FC8200"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="200dp"
+                            android:layout_height="140dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- HERO -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image1"
+                                android:alpha="0.75" />
+                            <!-- FRAME -->
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:background="#FFFFFF" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="55dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Ibis Hotel"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="40dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Ribeirão Preto - SP"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                            <!-- STAR -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="110dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:paddingStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:alpha="0.75"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/star_rating" />
+                            <!-- VALUE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_toEndOf="@+id/imageView"
+                                android:gravity="start|bottom"
+                                android:text="R$560"
+                                android:textColor="#FC8200"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                        <!-- CONTENT -->
+                        <RelativeLayout
+                            android:layout_width="200dp"
+                            android:layout_height="140dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#000000">
+                            <!-- HERO -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/carousel_image1"
+                                android:alpha="0.75" />
+                            <!-- FRAME -->
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:background="#FFFFFF" />
+                            <!-- TITLE -->
+                            <TextView
+                                android:id="@+id/titleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="55dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Ibis Hotel"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <!-- SUB-TITLE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="40dp"
+                                android:gravity="start|bottom"
+                                android:paddingStart="10dp"
+                                android:text="Ribeirão Preto - SP"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="normal" />
+                            <!-- STAR -->
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="110dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:paddingStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:alpha="0.75"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/star_rating" />
+                            <!-- VALUE -->
+                            <TextView
+                                android:id="@+id/subTitleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_toEndOf="@+id/imageView"
+                                android:gravity="start|bottom"
+                                android:text="R$560"
+                                android:textColor="#FC8200"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </android.widget.HorizontalScrollView>
+                <!-- SUB-TITLE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descubra novos lugares"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <!-- NAVIGATION_BAR -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FE8300"
+        app:layout_constraintBottom_toBottomOf="@+id/login_frame"
+        app:layout_constraintEnd_toEndOf="@+id/login_frame"
+        app:layout_constraintStart_toStartOf="@+id/login_frame">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0" />
+        <ImageButton
+            android:id="@+id/search_screen_button"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:importantForAccessibility="no"
+            android:onClick="SearchNavigationButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/home_screen_button"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/magnifying_glass_icon" />
+        <ImageButton
+            android:id="@+id/home_screen_button"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:importantForAccessibility="no"
+            android:onClick="HomeNavigationButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/profile_screen_button"
+            app:layout_constraintStart_toEndOf="@id/search_screen_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/home_icon" />
+        <ImageButton
+            android:id="@+id/profile_screen_button"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:importantForAccessibility="no"
+            android:onClick="ProfileNavigationButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/home_screen_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_icon" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
